@@ -61,7 +61,13 @@ gulp.task('app', ['jscs'], () => {
 
 });
 
-//setup less functionality
+gulp.task('less', () => {
+  return gulp.src('./less/main.less')
+		.pipe(less())
+    .pipe(plumber())
+		.pipe(concat('main.css'))
+		.pipe(gulp.dest('dist/css'));
+});
 
 gulp.task('browsersync', () => {
   browserSync({
