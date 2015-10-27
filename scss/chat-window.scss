@@ -1,11 +1,5 @@
-#chat-wrapper {
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .window {
-  height: calc(100% - 72px - 64px);
+  height: calc(100% - 64px - 64px);
   padding:20px;
   overflow: scroll;
   color: #696969;
@@ -23,5 +17,10 @@
 
 .message-wrapper h2 small.timestamp {
   font-style: italic;
-  font-size: 70%;
+  font-size: 65%;
+  margin-left: 8px;
+}
+
+.message-wrapper:last-of-type {
+  margin-bottom: 0;
 }

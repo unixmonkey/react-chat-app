@@ -1,13 +1,24 @@
 import React from 'react';
-import Paper from 'material-ui/lib/paper';
 
 export default class ChatWindow extends React.Component{
   render() {
     return (
-      <Paper zDepth={1} className='window' id='chat-window'>
+      <div zDepth={1} className='window' id='chat-window'>
         <ChatMessage />
         <ChatMessage />
-      </Paper>
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
+      </div>
     );
   }
 };

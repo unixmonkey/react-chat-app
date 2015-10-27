@@ -7,20 +7,18 @@
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babelify": "^6.4.0",
+    "browser-sync": "^2.9.11",
     "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-jscs": "^3.0.1",
     "gulp-jscs-stylish": "^1.2.1",
     "gulp-less": "^3.0.3",
     "gulp-plumber": "^1.0.1",
-    "material-ui": "^0.13.0",
+    "gulp-sass": "^2.0.4",
+    "materialize-css": "^0.97.1",
     "react": "^0.14.0",
-    "react-addons-create-fragment": "^0.14.0",
-    "react-addons-pure-render-mixin": "^0.14.0",
-    "react-addons-transition-group": "^0.14.0",
-    "react-addons-update": "^0.14.0",
     "react-dom": "^0.14.0",
-    "react-tap-event-plugin": "^0.2.1",
     "watchify": "^3.4.0"
   }
 }

@@ -6,19 +6,26 @@ import browserify from 'browserify';
 import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import jscs from 'gulp-jscs';
-import less from 'gulp-less';
+import sass from 'gulp-sass';
 import plumber from 'gulp-plumber';
 import source from 'vinyl-source-stream';
 import stylish from 'gulp-jscs-stylish';
 
 const config = {
-  dest: 'dist/js',
   vendors: [
     'react-dom',
-    'react',
-    'material-ui'
+    'react'
+  ],
+  fonts: [
+    './node_modules/materialize-css/font/**/*.{ttf,woff,woff2,eof,svg}'
   ]
 };
+
+gulp.task('fonts', function() {
+  gulp.src(config.fonts)
+    .pipe(plumber())
+    .pipe(gulp.dest('dist/font'));
+});
 
 gulp.task('vendors', () => {
   var stream = browserify({
@@ -27,17 +34,17 @@ gulp.task('vendors', () => {
   });
 
   stream.bundle()
-  .pipe(source('vendors.js'))
   .pipe(plumber())
-  .pipe(gulp.dest(config.dest));
+  .pipe(source('vendors.js'))
+  .pipe(gulp.dest('dist/js'));
 
   return stream;
 });
 
 gulp.task('jscs', () => {
   gulp.src(['./src/**/*jsx', 'Gulpfile.babel.js'])
-  .pipe(jscs())
   .pipe(plumber())
+  .pipe(jscs())
   .pipe(stylish());
 });
 
@@ -55,16 +62,16 @@ gulp.task('app', ['jscs'], () => {
   });
 
   return stream.bundle()
-  .pipe(source('app.js'))
   .pipe(plumber())
-  .pipe(gulp.dest(config.dest));
+  .pipe(source('app.js'))
+  .pipe(gulp.dest('dist/js'));
 
 });
 
-gulp.task('less', () => {
-  return gulp.src('./less/main.less')
-		.pipe(less())
+gulp.task('sass', () => {
+  return gulp.src('./scss/main.scss')
     .pipe(plumber())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(concat('main.css'))
 		.pipe(gulp.dest('dist/css'));
 });
@@ -81,6 +88,7 @@ gulp.task('browsersync', () => {
 
 gulp.task('watch', () => {
   gulp.watch(['./src/**/*.jsx'], ['app', browserSync.reload]);
+  gulp.watch(['./scss/**/*.scss'], ['sass', browserSync.reload]);
 });
 
-gulp.task('default',['browsersync', 'vendors', 'app', 'watch'], () => {});
+gulp.task('default',['fonts', 'sass', 'browsersync', 'vendors', 'app', 'watch'], () => {});
