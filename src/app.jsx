@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import Materialize from 'materialize-js';
 
 //Components
-import NavBar from './components/nav-bar.jsx';
-import UserList from './components/user-list.jsx';
-import ChatWindow from './components/chat-window.jsx';
-import ChatBar from './components/chat-bar.jsx';
+import NavBar from './components/NavBar.jsx';
+import UserList from './components/UserList.jsx';
+import ChatWindow from './components/ChatWindow.jsx';
+import ChatBar from './components/ChatBar.jsx';
 
 
 class App extends React.Component {
