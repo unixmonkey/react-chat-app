@@ -1,21 +1,37 @@
 .window {
-  height: calc(100% - 64px - 64px);
-  padding:20px;
+  @include calc(height, "100% - 75px - 64px");
   overflow: scroll;
   color: #696969;
+  padding: 0 20px 20px 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.welcome-message {
+  margin-bottom:40px;
+  h2 {
+    margin-bottom:0;
+  }
+  p {
+    margin: 0;
+    font-style: italic;
+  }
 }
 
 .message-wrapper {
   margin-bottom: 20px;
 }
 
-.message-wrapper h2 {
+.message-wrapper span {
   color: #363636;
   font-weight: bold;
-  margin-bottom:6px;
+  margin-bottom:0px;
 }
 
-.message-wrapper h2 small.timestamp {
+.message-wrapper p {
+  margin:0px;
+}
+
+.message-wrapper span small.timestamp {
   font-style: italic;
   font-size: 65%;
   margin-left: 8px;

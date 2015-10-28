@@ -14,7 +14,10 @@ import stylish from 'gulp-jscs-stylish';
 const config = {
   vendors: [
     'react-dom',
-    'react'
+    'react',
+    'jquery',
+    'materialize-js',
+    'flux'
   ],
   fonts: [
     './node_modules/materialize-css/font/**/*.{ttf,woff,woff2,eof,svg}'
@@ -33,6 +36,8 @@ gulp.task('vendors', () => {
     require: config.vendors
   });
 
+  gulp.src('node_modules/pickadate/lib/picker.js').pipe(gulp.dest('node_modules/materialize-css/bin'));
+
   stream.bundle()
   .pipe(plumber())
   .pipe(source('vendors.js'))
@@ -42,7 +47,7 @@ gulp.task('vendors', () => {
 });
 
 gulp.task('jscs', () => {
-  gulp.src(['./src/**/*jsx', 'Gulpfile.babel.js'])
+  gulp.src(['./src/**/*.{js,jsx}', 'Gulpfile.babel.js'])
   .pipe(plumber())
   .pipe(jscs())
   .pipe(stylish());
@@ -53,7 +58,7 @@ gulp.task('app', ['jscs'], () => {
     entries: ['./src/app.jsx'],
     transform: [babelify],
     debug: false,
-    extensions: ['.jsx'],
+    extensions: ['.jsx', '.js'],
     fullPaths: false
   });
 
@@ -87,7 +92,7 @@ gulp.task('browsersync', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(['./src/**/*.jsx'], ['app', browserSync.reload]);
+  gulp.watch(['./src/**/*.{js,jsx}'], ['app', browserSync.reload]);
   gulp.watch(['./scss/**/*.scss'], ['sass', browserSync.reload]);
 });
 

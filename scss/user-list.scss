@@ -1,4 +1,8 @@
 #userlist {
-  height: calc(100% - 64px);
+  @include calc(height, "100% - 64px");
   padding: 15px;
+  .gAuth, .chip {
+    width: 100%;
+    margin-bottom:10px;
+  }
 }

@@ -1,6 +1,20 @@
 @import "./node_modules/materialize-css/sass/materialize.scss";
 
+html, body, #chat, #chat-wrapper, .height-100{
+  height: 100%;
+  overflow: hidden;
+}
 
-// @import "./chat-window.scss";
-// @import "./chat-bar.scss";
-// @import "./user-list.scss";
+nav .brand-logo {
+  margin-left:20px;
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+
+@import "./chat-window.scss";
+@import "./chat-bar.scss";
+@import "./user-list.scss";
