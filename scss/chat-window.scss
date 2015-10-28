@@ -19,24 +19,24 @@
 
 .message-wrapper {
   margin-bottom: 20px;
-}
-
-.message-wrapper span {
-  color: #363636;
-  font-weight: bold;
-  margin-bottom:0px;
-}
-
-.message-wrapper p {
-  margin:0px;
-}
-
-.message-wrapper span small.timestamp {
-  font-style: italic;
-  font-size: 65%;
-  margin-left: 8px;
-}
-
-.message-wrapper:last-of-type {
-  margin-bottom: 0;
+  span {
+    color: #363636;
+    font-weight: bold;
+    margin-bottom:0px;
+  }
+  p {
+    margin:0px;
+  }
+  :last-of-type {
+    margin-bottom: 0;
+  }
+  span small.timestamp {
+    font-style: italic;
+    font-size: 65%;
+    margin-left: 8px;
+  }
+  .avatar {
+    font-size: 44px;
+    margin-right:4px;
+  }
 }

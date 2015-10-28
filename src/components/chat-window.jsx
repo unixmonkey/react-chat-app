@@ -20,7 +20,7 @@ class ChatMessage extends React.Component{
   render() {
     return (
       <div className='message-wrapper'>
-        <i className='material-icons'>person</i>
+        <i className='material-icons left avatar circle'>person</i>
         <span>User Name<small className='timestamp'>12:00 PM</small></span>
         <p>
           Plunger pot crema trifecta, single origin, crema coffee irish mocha instant.

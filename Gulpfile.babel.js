@@ -20,7 +20,7 @@ const config = {
     'flux'
   ],
   fonts: [
-    './node_modules/materialize-css/font/**/*.{ttf,woff,woff2,eof,svg}'
+    './node_modules/materialize-css/font/roboto/*.{ttf,woff,woff2,eof,svg}'
   ]
 };
 
