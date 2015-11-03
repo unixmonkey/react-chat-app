@@ -3,6 +3,9 @@
 node_modules
 src
 scss
+package.json
+Gulpfile.babel.js
+.jscsrc
 
 # Compiled source #
 ###################
