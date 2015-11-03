@@ -1,5 +1,5 @@
 import React from 'react';
-import GoogleAuth from './google-auth.jsx';
+import GoogleAuth from './GoogleAuth.jsx';
 
 export default class UserList extends React.Component{
   render() {

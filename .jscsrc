@@ -17,7 +17,7 @@
     "esnext":true,
     "maximumLineLength": 120,
     "requireCapitalizedConstructors": true,
-    "requireCurlyBraces": true,
+    "requireCurlyBraces": false,
     "requireSpaceAfterKeywords": [
         "if",
         "else",

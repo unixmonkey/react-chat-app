@@ -8,7 +8,6 @@ import UserList from './components/UserList.jsx';
 import ChatWindow from './components/ChatWindow.jsx';
 import ChatBar from './components/ChatBar.jsx';
 
-
 class App extends React.Component {
   render() {
     return (
