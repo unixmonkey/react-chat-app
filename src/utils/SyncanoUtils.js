@@ -31,9 +31,6 @@ class SyncanoUtils {
     });
   }
 
-//get user updates
-
-//create user
 };
 
 msgChannel.on('create', function(res) {

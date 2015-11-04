@@ -96,4 +96,4 @@ gulp.task('watch', () => {
   gulp.watch(['./scss/**/*.scss'], ['sass', browserSync.reload]);
 });
 
-gulp.task('default',['fonts', 'sass', 'vendors', 'app', 'watch'], () => {});
+gulp.task('default',['fonts', 'sass', 'vendors', 'app', 'browsersync', 'watch'], () => {});
